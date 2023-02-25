@@ -5,9 +5,17 @@ export const places = [
     location: "Thailand",
     description:
       "Chiang Mai is a land of misty mountains and colourful hill tribes, a playground for seasoned travellers, a paradise for shoppers and a delight for adventurers.",
-    imageUrl: "https://images.pexels.com/photos/5709844/pexels-photo-5709844.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageUrl:
+      "https://images.pexels.com/photos/5709844/pexels-photo-5709844.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     price: 50,
     rating: 4.5,
+    image: [
+      "https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/15286/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/3225518/pexels-photo-3225518.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/3415629/pexels-photo-3415629.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/4111720/pexels-photo-4111720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    ],
     category: "City",
     featured: true,
     amenities: ["Free wifi", "Breakfast included", "Gym", "Swimming pool"],

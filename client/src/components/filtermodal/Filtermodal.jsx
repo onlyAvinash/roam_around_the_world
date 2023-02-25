@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import Map from "../map/Map";
 import "./Filtermodal.css";
 
 const FilterModal = ({ show, onClose }) => {
@@ -40,17 +41,7 @@ const FilterModal = ({ show, onClose }) => {
             />
           </div>
           <div className="map-container">
-            <MapContainer
-              center={[51.505, -0.09]}
-              zoom={13}
-              scrollWheelZoom={true}
-              onClick={handleMapClick}
-            >
-              <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-              {pinnedLocation && (
-                <Marker position={pinnedLocation} onClick={handleResetClick} />
-              )}
-            </MapContainer>
+            <Map/>
           </div>
           <div className="filter-buttons">
             <button type="button" onClick={onClose}>
