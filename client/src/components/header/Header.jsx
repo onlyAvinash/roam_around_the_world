@@ -41,6 +41,13 @@ const Header = () => {
         </div>
         <div className="profile">
           <FaUserCircle />
+          <div className='profile-dropdown'>
+            <p>Hey username!</p>
+            <div className="profile-buttons">
+            <button className='profile-share-btn' type='button'>Share your Visit </button>
+              <button className='profile-logout-btn' type='button'>LogOut </button>
+              </div>
+          </div>
         </div>
           </div>
                 {showPinnedItems && <Wishlist onClose={() => setShowPinnedItems(false)} />}
