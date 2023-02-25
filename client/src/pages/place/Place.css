@@ -1,10 +1,29 @@
 .placeComp{
   background-color: #fbfcf5;
 }
+.placeTitle{
+    /* background-color: aqua; */
+    padding: 5px;
+    border-top:1px solid #609966a6;
+    border-bottom:1px solid #609966;
+}
+.placeTitle p:nth-child(1){
+    margin-top: 10px;
+   margin-left: 30px;
+   font-weight: 700;
+   color: #609966;
+   font-size: 1.6em;
+}
+.placeTitle p:nth-child(2){
+   margin-left: 30px;
+   font-weight: 600;
+   color: #609966;
+   font-size: 1.3em;
+}
 .container {
   display: flex;
   width: 95%;
-  padding: 2% 2%;
+  padding: 2px 2%;
   /* box-sizing: border-box; */
   height: 60vh;
 }
@@ -39,6 +58,7 @@
 .allAboutPlace{
     display: flex;
     padding: 10px;
+    margin-top: 40px;
 }
 .placePostedBy{
     flex: 1;

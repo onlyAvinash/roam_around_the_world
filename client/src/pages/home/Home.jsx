@@ -17,9 +17,7 @@ import {
 import FilterModal from "../../components/filtermodal/Filtermodal";
 
 export const Home = () => {
-  const [selectedCategory, setSelectedCategory] = useState(
-    localStorage.getItem("selectedCategory") || "all"
-  );
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const [placesData, setPlacesData] = useState(places);
   const [showFilterModal, setShowFilterModal] = useState(false);
   const [isPinned, setIsPinned] = useState();
@@ -31,9 +29,9 @@ export const Home = () => {
   const handleFilterClose = () => {
     setShowFilterModal(false);
   };
-  useEffect(() => {
-    localStorage.setItem("selectedCategory", selectedCategory);
-  }, [selectedCategory]);
+  // useEffect(() => {
+  //   localStorage.setItem("selectedCategory", selectedCategory);
+  // }, [selectedCategory]);
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);

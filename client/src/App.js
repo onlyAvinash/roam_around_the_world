@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Place from './pages/place/Place';
 import Header from './components/header/Header';
 import { Home } from './pages/home/Home';
+import Login from './pages/login/Login';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Route path="/" >
         <Route index element={<Home />} />
         <Route path="place" element={< Place/>} />
+        <Route  path="login" element={<Login />} />
         <Route path="place/:id" element={<Place />} />
       </Route>
     </Routes>

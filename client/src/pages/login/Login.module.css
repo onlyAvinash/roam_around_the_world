@@ -1,0 +1,117 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color:  #fbfcf5;;
+}
+
+.loginBox {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    width: 20rem;
+    text-align: center;
+}
+
+.fade-enter {
+    opacity: 0;
+    transform: translateY(-50%);
+}
+
+.fade-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 500ms, transform 500ms;
+}
+
+.fade-exit {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-exit-active {
+    opacity: 0;
+    transform: translateY(-50%);
+    transition: opacity 500ms, transform 500ms;
+}
+
+.title {
+    margin-bottom: 2rem;
+    color: #9DC08B;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputGroup {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+        font-weight: bold;
+    }
+    
+    input {
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+        width: 100%;
+    }
+    
+    button {
+        background-color: #9DC08B;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        border: none;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+    
+    button:hover {
+        background-color: #609966;
+    }
+    
+    .signupLink {
+        margin-top: 2rem;
+        color: #aaa;
+        font-size: 0.875rem;
+    }
+    
+    .signupLink a {
+        color: #609966;
+    }
+    
+    .alert-enter {
+        opacity: 0;
+    }
+    
+    .alert-enter-active {
+        opacity: 1;
+        transition: opacity 500ms;
+    }
+    
+    .alert-exit {
+        opacity: 1;
+    }
+    
+    .alert-exit-active {
+        opacity: 0;
+        transition: opacity 500ms;
+    }
+    
+    .errorBox {
+        background-color: #f8d7da;
+        color: #721c24;
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+        margin-top: 1rem;
+    }

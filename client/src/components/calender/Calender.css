@@ -113,7 +113,7 @@
     animation-duration: 0.5s;
     animation-timing-function: ease-in-out;
 }
-.modal-container {
+.calendar-container .modal-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -126,12 +126,13 @@
     align-items: center;
 }
 
-.modal {
+.calendar-container .modal {
     position: relative;
     background-color: white;
     padding: 2rem;
     display: flex;
     flex-direction: column;
+   
     border-radius: 0.5rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
     max-width: 80%;
@@ -139,21 +140,25 @@
     overflow: auto;
 }
 
-.modal-header {
+.calendar-container .modal-header {
     display: flex;
     /* flex-direction: column; */
     justify-content: space-between;
     align-items: center;
+    gap: 30px;
 }
 
-.modal-close {
+.calendar-container .modal-close {
     background: none;
     border: none;
     font-size: 2rem;
+    background-color: rgb(85, 142, 98);
+    transform: translateY(-10%);
+    height: auto;
     cursor: pointer;
 }
 
-.modal-body {
+.calendar-container .modal-body {
     color: white;
     margin-top: 2rem;
     font-size: 1.2rem;

@@ -10,9 +10,11 @@ a {
 
 .category-section {
   /* margin: 40px 0; */
+  border-bottom: 1px solid #679a4f;
+  border-top: 1px solid #679a4f;
   padding: 0 20px;
   height: 60px;
-margin-top: 10px;
+/* margin-top: 10px; */
 display: flex;
   align-items: center;
   justify-content: space-between;
@@ -102,6 +104,7 @@ display: flex;
   position: relative;
   overflow: hidden;
   width: 40vh;
+  /* border-bottom: 1px solid #679a4f; */
   /* margin-right: 50px; */
   background-color: transparent;
   /* border-radius: 10px; */

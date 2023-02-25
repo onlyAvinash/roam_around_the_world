@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import "./Header.css"
 import { FaSearch, FaUserCircle, FaThumbtack, FaBell } from 'react-icons/fa';
 import Wishlist from '../wishlist/Wishlist';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     const [notification, setNotification] = useState('');
@@ -20,8 +21,11 @@ const Header = () => {
   };
   return (
     <header>
+      
       <div className="logo">
-        <img src="logo.svg" alt="logo" />
+        <Link to="/">
+          <img src="logo.svg" alt="logo" />
+          </Link>
       </div>
       <div className="search-bar">
         <div className="search-bar-container">
