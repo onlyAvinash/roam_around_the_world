@@ -18,6 +18,12 @@ const StorySchema = new Schema({
     required: true
   },
 
+  destination: {
+    type: String,
+    default: "",
+    required: true
+  },
+
   CreatedAt: { type: String, default: Date.now() }
 });
 

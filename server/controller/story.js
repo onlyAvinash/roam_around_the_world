@@ -17,6 +17,7 @@ createOne = async (req, res) => {
       storyId: storyId,
       title: req.body.title,
       text: req.body.storyDesc,
+      destination: req.body.destination
     });
 
     const story = await newStory.save();
