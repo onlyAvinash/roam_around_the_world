@@ -2,17 +2,20 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import styles from './Login.module.css';
+import {useNavigate} from "react-router-dom"
 const myStorage = window.localStorage;
 
 function Login() {
+  const navigate=useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showError, setShowError] = useState(false);
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     if (username === 'admin' && password === 'password') {
       alert('Login successful!');
+      navigate("/");
       myStorage.setItem("user", "admin");
     } else {
       setShowError(true);
