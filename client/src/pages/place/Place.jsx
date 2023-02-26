@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Calendar from "../../components/calender/Calender";
 import Map from "../../components/map/Map";
@@ -6,13 +6,6 @@ import { places } from "../../dummydata";
 import axios from 'axios';
 
 import "./Place.css";
-
-let stories = [
-  { title: "delhi", text: "the place is good", pub_data: "3-Jan-2023" },
-  { title: "", text: "", pub_data: "" },
-  { title: "", text: "", pub_data: "" },
-  { title: "", text: "", pub_data: "" }
-]
 
 const Place = () => {
   const { id } = useParams();
@@ -25,25 +18,44 @@ const Place = () => {
 
   const user = localStorage.getItem("user")
   const [review, setReview] = useState('');
+  const [stories, setStories] = useState([]);
+
+  const retrieveStory = async () => {
+    try {
+      const result = await axios.get('/api/story/');
+      let stories1 = result.data;
+      console.log( stories1 )
+  
+      setStories(stories1)
+    } catch (err) {
+      console.error(err.message)
+      window.alert('an error occurred')
+    }
+  }
 
   const handleReview = async () => {
     try {
       const story
         = await axios.post(
-          'http://localhost:5000/api/story/create/',
+          '/api/story/create/',
           {
             title: user ? user : "random user",
             destination: currentPlace.location,
             storyDesc: review
           }
         )
+        
       window.alert('review posted!')
+      retrieveStory();
     } catch (err) {
       console.error(err)
       window.alert('an error occurred')
     }
   }
 
+  useEffect(() => {
+    retrieveStory();
+  },[]);
 
   // console.log(place)
   return (
@@ -150,6 +162,13 @@ const Place = () => {
 
 export default Place;
 
+
+// let storiesTest = [
+//   { title: "delhi", text: "the place is good", pub_data: "3-Jan-2023" },
+//   { title: "", text: "", pub_data: "" },
+//   { title: "", text: "", pub_data: "" },
+//   { title: "", text: "", pub_data: "" }
+// ]
 // const myStorage = window.localStorage;
 // myStorage.setItem("user", res.data.username);
 // import { Members } from '../../dummyuser'
