@@ -2,9 +2,7 @@
 
 ## Inspiration 
 There ara many places in world which are underrated people don't know about it 
-The place is not that much talked about. 
-
-Many Travelling geeks find their next travel destination. This app gives travellers to discover new places.
+The place is not that much talked about. Many Travelling geeks find their next travel destination. This app helps travellers to discover new places.
 
 ## What it does 
 Its a community driven website. Website is made to help travllers find new places to travel which are worth visiting. Travllers can post a blog, share photos, pin location of the place they visited. 
