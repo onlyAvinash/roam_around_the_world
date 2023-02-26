@@ -56,6 +56,7 @@ export const Home = () => {
   };
 
   return (
+    
     <div className="HomePage">
       <div className="category-section">
         <ul className="category-list">

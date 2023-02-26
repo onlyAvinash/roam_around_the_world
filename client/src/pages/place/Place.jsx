@@ -20,7 +20,7 @@ const Place = () => {
     <div className="placeComp">
       <div className="placeTitle">
         <p>{currentPlace.title}</p>  
-        <p>&#x1F4CD;{ currentPlace.location}</p>
+        <p>&#9733;{currentPlace.rating} . &#x1F4CD;{currentPlace.location}.</p>
       </div>
       <div className="container">
         <div className="box">

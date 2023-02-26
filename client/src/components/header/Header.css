@@ -57,14 +57,14 @@ header {
     color: #eff1e7;
 }
 
-.search-bar button {
+.search-bar a {
     position: absolute;
     height: 100%;
     width: 20%;
-    top: 50%;
+    top: 60%;
     color: #7c9575;
     font-size: larger;
-    right: 2px;
+    right: -4px;
     transform: translateY(-35%);
     background-color: transparent;
     border: none;

@@ -3,15 +3,16 @@ import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import styles from './Login.module.css';
 
-function Login() {
+function Register() {
   const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showError, setShowError] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (username === 'admin' && password === 'password') {
-      alert('Login successful!');
+    if (username !== '' && password !== '') {
+      alert('Register successful!');
     } else {
       setShowError(true);
     }
@@ -26,8 +27,19 @@ function Login() {
         classNames={styles.fade}
       >
         <div className={styles.loginBox}>
-          <h2 className={styles.title}>Login</h2>
+          <h2 className={styles.title}>Register</h2>
           <form onSubmit={handleSubmit}>
+            <div className={styles.inputGroup}>
+              <label htmlFor="email">email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
             <div className={styles.inputGroup}>
               <label htmlFor="username">Username</label>
               <input
@@ -51,11 +63,11 @@ function Login() {
               />
             </div>
             <div className={styles.inputGroup}>
-              <button type="submit">Login</button>
+              <button type="submit">Register</button>
             </div>
           </form>
           <div className={styles.signupLink}>
-            Don't have an account? <Link to="/register">Sign up</Link>
+            Already have an account? <Link to="/login">Login</Link>
           </div>
           <CSSTransition
             in={showError}
@@ -65,7 +77,7 @@ function Login() {
             onExited={() => setShowError(false)}
           >
             <div className={styles.errorBox}>
-              <p>Invalid username or password.</p>
+              <p>fill username, email or password.</p>
             </div>
           </CSSTransition>
         </div>
@@ -74,4 +86,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Register;

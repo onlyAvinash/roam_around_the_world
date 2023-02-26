@@ -30,9 +30,9 @@ const Header = () => {
       <div className="search-bar">
         <div className="search-bar-container">
           <input type="text" placeholder="Search..." />
-          <button>
+          <a className='search-bar-button'>
             <FaSearch />
-          </button>
+          </a>
         </div>
       </div>
       <div className="profile-icons">
