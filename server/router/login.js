@@ -7,9 +7,9 @@ const Router=express.Router();
 
 Router.post("/login",auth.login);
 Router.post("/register",auth.register);
-Router.post('/protected', authenticateToken,Story.createOne);
-Router.get('/protected', authenticateToken,Story.findAll);
-Router.get('/protected/:id', authenticateToken,Story.findOneById);
+Router.post('/protected',Story.createOne);
+Router.get('/protected',Story.findAll);
+Router.get('/protected/:id',Story.findOneById);
 
 
 module.exports=Router 

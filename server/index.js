@@ -1,7 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
-
+const bodyParser = require('body-parser');
 const db = require('./db');
 const storyRouter = require("./router/story");
 const loginRoutes=require("./router/login");
@@ -9,6 +9,9 @@ const app = express();
 const apiPort = process.env.PORT || 5000;
 
 app.use(express.json());
+app.use(cors())
+// parse application/json
+
 
 app.use(morgan("common"));
 

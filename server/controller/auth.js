@@ -2,7 +2,11 @@ const userModel = require("../model/User");
 const mongoose = require("mongoose");
 const jwt =  require("jsonwebtoken")
 const login = async(req, res) => {
+       try {
+        console.log("post request was made for login");
+       
         const {username,password}=req.body
+        console.log({username,password});
         const userExists=await userModel.findOne({username});
         // if user dosen't exists or password don't match
         if(!userExists){
@@ -22,12 +26,17 @@ const login = async(req, res) => {
   // return token as response
   res.json({ token });
     }
+       } catch (error) {
+        res.status(500).json({message:"Internal Server Error"})
+       }
    
 }
 
 const register = async(req, res) => {
     try{
+        console.log("post request was made register");
         const { username, email, password } = req.body;
+        console.log({username,email,password});
         const userExists=await userModel.findOne({email});
         if(userExists){
             res.json({message:"user already exists"});
@@ -39,13 +48,15 @@ const register = async(req, res) => {
                 password,
               });
               const savedUser = await user.save();
-              res.status(201).json(savedUser);
+              console.log("data registered");
+              res.status(201).json({savedUser});
         }
     } catch(err){
         console.log(err.message);
         res.status(500).json({err:err.message})
     }
 }
+
 module.exports = {
     register, login
 }
