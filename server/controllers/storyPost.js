@@ -1,4 +1,4 @@
-const userModel = require("../server/models/User");
+const userModel = require("../models/User");
 const storyPost=(req,res)=>{
     try {
         // Check user role

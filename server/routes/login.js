@@ -1,7 +1,7 @@
 const express = require("express")
 const userModel=require("../models/User");
-const auth = require("../../controllers/auth");
-const Story=require("../../controllers/storyPost");
+const auth = require("../controllers/auth");
+const Story=require("../controllers/storyPost");
 const { authenticateToken } = require("../middlewares/authenticateToken");
 const Router=express.Router();
 const rbacMiddleware=require("../middlewares/accessControl")
