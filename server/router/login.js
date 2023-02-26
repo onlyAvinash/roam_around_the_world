@@ -4,7 +4,6 @@ const auth = require("../controller/auth");
 const Story=require("../controller/story");
 const { authenticateToken } = require("../middlewares/authenticateToken");
 const Router=express.Router();
-const rbacMiddleware=require("../middlewares/accessControl")
 
 Router.post("/login",auth.login);
 Router.post("/register",auth.register);

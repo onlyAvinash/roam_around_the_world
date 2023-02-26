@@ -1,4 +1,4 @@
-const userModel = require("../models/User");
+const userModel = require("../model/User");
 const mongoose = require("mongoose");
 const jwt =  require("jsonwebtoken")
 const login = async(req, res) => {
