@@ -6,18 +6,20 @@ import Header from './components/header/Header';
 import { Home } from './pages/home/Home';
 import Login from './pages/login/Login';
 import Register from './pages/login/Register';
+import Postform from './components/postform/Postform';
 
 
 function App() {
   return (
    
      <BrowserRouter>
-     <Header/>
+     {/* <Header/> */}
     <Routes>
       <Route path="/" >
         <Route index element={<Home />} />
         <Route  path="login" element={<Login />} />
         <Route  path="register" element={<Register />} />
+        <Route  path="share" element={<Postform />} />
         <Route path="place" element={< Place/>} />
         <Route path="place/:id" element={<Place />} />
       </Route>

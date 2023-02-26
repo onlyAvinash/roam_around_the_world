@@ -13,11 +13,13 @@ function Register() {
     e.preventDefault();
     if (username !== '' && password !== '') {
       alert('Register successful!');
+ console.log({email, username, password});
+      
     } else {
       setShowError(true);
     }
   };
-
+ console.log({email, username, password});
   return (
     <div className={styles.container}>
       <CSSTransition

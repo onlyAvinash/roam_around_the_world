@@ -15,6 +15,7 @@ import {
   FaUmbrellaBeach,
 } from "react-icons/fa";
 import FilterModal from "../../components/filtermodal/Filtermodal";
+import Header from "../../components/header/Header";
 
 export const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -56,7 +57,9 @@ export const Home = () => {
   };
 
   return (
-    
+    <>
+     <Header/>
+  
     <div className="HomePage">
       <div className="category-section">
         <ul className="category-list">
@@ -122,6 +125,7 @@ export const Home = () => {
       {showFilterModal && (
         <FilterModal show={showFilterModal} onClose={handleFilterClose} />
       )}
-    </div>
+      </div>
+      </>
   );
 };
