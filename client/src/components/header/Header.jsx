@@ -1,30 +1,44 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Header.css"
 import { FaSearch, FaUserCircle, FaThumbtack, FaBell } from 'react-icons/fa';
 import Wishlist from '../wishlist/Wishlist';
 import { Link } from 'react-router-dom';
 
-const Header = () => {
-    const [notification, setNotification] = useState('');
+const Header = ({notifcationText}) => {
+    const [notification, setNotification] = useState('Welcome To the FindHeaven.earth');
     const [activeNotification, setActiveNotification] = useState(true);
     const [ showDropNotification, setShowDropNotification] = useState(false);
     const [showPinnedItems, setShowPinnedItems] = useState(false);
     
+  
     const handleNotificationClick = () => {
         setShowDropNotification(true);
-    setNotification('You have one new notification!');
     setActiveNotification(false);
     };
     
      const handlePinnedItemsClick = () => {
     setShowPinnedItems(true);
   };
+
+  // const handleNotifcationFromCalender = (newnotification) => {
+  //   setNotification(newnotification);
+  //   setActiveNotification(true);
+  // }
+   console.log({notifcationText});
+  useEffect(() => {
+    setNotification(notifcationText);
+    setActiveNotification(true);
+      
+  
+    
+  }, [notifcationText])
+  
   return (
     <header>
       
       <div className="logo">
         <Link to="/">
-          <img src="logo.svg" alt="logo" />
+          <img src="/logo.svg" alt="logo" />
           </Link>
       </div>
       <div className="search-bar">
@@ -48,7 +62,7 @@ const Header = () => {
           <div className='profile-dropdown'>
             <p>Hey username!</p>
             <div className="profile-buttons">
-            <button className='profile-share-btn' type='button'>Share your Visit </button>
+             <Link to="/share" style={{width:"80%"}}>  <button className='profile-share-btn' type='button'>Share your Visit </button></Link>
             <Link to="/login" style={{width:"80%"}}>  <button className='profile-logout-btn' type='button'>LogIn</button></Link>
               </div>
           </div>

@@ -6,10 +6,12 @@ import { places } from "../../dummydata";
 import axios from 'axios';
 
 import "./Place.css";
+import Header from "../../components/header/Header";
 
 const Place = () => {
   const { id } = useParams();
   const [placesArray, setPlacesArray] = useState([...places]);
+  const [notifcationText, setNotifcationText] = useState('')
   const currentPlace = placesArray.find((place) => {
     return place.id === Number(id);
   });
@@ -22,7 +24,7 @@ const Place = () => {
 
   const retrieveStory = async () => {
     try {
-      const result = await axios.get('/api/story/');
+      const result = await axios.get('http://localhost:5000/api/story/');
       let stories1 = result.data;
       console.log( stories1 )
   
@@ -37,7 +39,7 @@ const Place = () => {
     try {
       const story
         = await axios.post(
-          '/api/story/create/',
+          'http://localhost:5000/api/story/create/',
           {
             title: user ? user : "random user",
             destination: currentPlace.location,
@@ -47,6 +49,7 @@ const Place = () => {
         
       window.alert('review posted!')
       retrieveStory();
+      setReview('')
     } catch (err) {
       console.error(err)
       window.alert('an error occurred')
@@ -55,10 +58,17 @@ const Place = () => {
 
   useEffect(() => {
     retrieveStory();
-  },[]);
+  }, []);
+  
+  const takeNotification = (text) => {
+      setNotifcationText(text)
+  }
 
   // console.log(place)
   return (
+    <>
+      <Header notifcationText={ notifcationText} />
+  
     <div className="placeComp">
       <div className="placeTitle">
         <p>{currentPlace.title}</p>  
@@ -127,36 +137,37 @@ const Place = () => {
             <Map />
           </div>
           <div className="calenderWrapper">
-            <Calendar />
+            <Calendar takeNotification={takeNotification} />
           </div>
         </div>
       </div>
       <div className="placeReview">
-        <p>Review and Feedback</p>
+        <p style={{fontSize:"1.2em", fontWeight:"bolder"}}>Review and Feedback</p>
 
         <div className="add-review">
           <div className="form bg-white shadow-lg rounded-lg my-20 px-0 py-8">
             <div className="px-8 w-full ">
-              <textarea onChange={(e) => setReview(e.target.value)} className="rounded-md p-2 text-sm w-full bg-blue-50" rows="5" cols="1" placeholder="Write your review.." type="text" name="text"></textarea>
-              <button onClick={() => handleReview()} className="p-2 mx-auto mt-4 w-full rounded-md bg-blue-500 text-white text-center">Submit</button>
+              <textarea value={review} onChange={(e) => setReview(e.target.value)} className="rounded-md p-2 text-sm w-full bg-blue-50" rows="5" cols="1" placeholder="Write your review.." type="text" name="text"></textarea>
+              <button onClick={() => handleReview()} className="p-2 mx-auto mt-4 w-full rounded-md bg-gray-500 text-white text-center">Submit</button>
             </div>
           </div>
-          <h1 style={{ textAlign: "center" }}>All Dbs</h1>
+          <h1 style={{ textAlign: "center",fontSize:"1.5em", fontWeight:"bolder"  }}>All Reviews</h1>
           {stories.map(function (story, i) {
             return <div key={i + 1} className=" mx-auto py-4 px-8 bg-white shadow-lg rounded-lg my-20">
               <div className="flex justify-center md:justify-end -mt-16">
                 <img className="w-20 h-20 object-cover rounded-full border-2 border-indigo-500" src="https://source.unsplash.com/random/?man,face" />
               </div>
               <div>
-                <h2 className="text-gray-800 text-3xl font-semibold">{story.title}</h2>
-                <p className="mt-2 text-gray-600">{story.text}</p>
+                <h2 className="text-gray-600 text-l font-semibold">{story.title}</h2>
+                <p className="mt-2 text-gray-800 text-2xl font-semibold">{story.text}</p>
               </div>
             </div>
           })}
         </div>
 
       </div>
-    </div>
+      </div>
+      </>
   );
 };
 

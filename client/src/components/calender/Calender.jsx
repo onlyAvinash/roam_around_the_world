@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import "./Calender.css";
 
-const Calendar = () => {
+const Calendar = ({takeNotification}) => {
   const [checkInDate, setCheckInDate] = useState(null);
   const [checkOutDate, setCheckOutDate] = useState(null);
   const [showModal, setShowModal] = useState(false);
-
+   
   const handleDateClick = (date) => {
+
     if (!checkInDate) {
       setCheckInDate(date);
     } else if (checkInDate && !checkOutDate) {
@@ -25,6 +26,8 @@ const Calendar = () => {
   const handleCheckOutClick = () => {
     if (checkInDate && checkOutDate) {
       setShowModal(true);
+      takeNotification(` ${checkInDate.toLocaleDateString("en-US")} :- this place is famous for sky diving `)
+       
     }
   };
 
@@ -115,23 +118,24 @@ const Calendar = () => {
           Check Out
         </button>
           </div>
-          <p>Selects the dates </p>
-          <p>get intresting things about the place</p>
-          <p>throughout Your journey</p>
+          <p>Selects the dates and get facts about this place throughout your journey </p>
+          
       {showModal && (
         <div className="modal-container">
           <div className="modal">
             <div className="modal-header">
-              <h2>Booking Confirmation</h2>
+              <h2> Confirmation</h2>
               <button
                 className="modal-close"
-                onClick={() => setShowModal(false)}
+                onClick={() =>{ setShowModal(false) 
+                  setCheckInDate(null)
+                  setCheckOutDate(null)}}
               >
                 ×
               </button>
             </div>
             <div className="modal-body">
-              <p>You have selected the following dates for your stay:</p>
+              <p>You have selected the following dates for your journer:</p>
               <p>Check In: {checkInDate.toLocaleDateString("en-US")}</p>
               <p>Check Out: {checkOutDate.toLocaleDateString("en-US")}</p>
             </div>

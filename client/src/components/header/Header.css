@@ -3,7 +3,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    height: 60px;
+    height: 70px;
     overflow: hidden;
     background-color: #EDF1D6;
     position: sticky;
@@ -26,7 +26,7 @@ header {
 }
 
 .search-bar-container {
-    position: relative;
+    /* position: relative; */
     transform: translate(95%,0);
     margin-left: 10%;
     width: 30%;
@@ -40,7 +40,7 @@ header {
 
 
 .search-bar input {
-    width: 60%;
+    width: 70%;
     height: 100%;
     font-size:larger;
     padding: 5px 45px 10px 15px;
