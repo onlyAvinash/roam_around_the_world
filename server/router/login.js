@@ -1,5 +1,5 @@
 const express = require("express")
-const userModel=require("../models/User");
+const userModel=require("../model/User");
 const auth = require("../controllers/auth");
 const Story=require("../controllers/storyPost");
 const { authenticateToken } = require("../middlewares/authenticateToken");
