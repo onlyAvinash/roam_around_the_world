@@ -17,11 +17,13 @@ Its a community driven website. Website is made to help travllers find new place
 
 ***How to Reach the location*** Finding underrated places is hard so we have come up with a feature where people can also share how they reached the place,vehicile, cost it took to travel and time taken to travel to that place.
 
-***Tech Stack***
+### Tech Stack
 
-- ExpressJs for the backend 
+- ***ExpressJs*** for the backend 
 
-- For the Database we have used ***Mongodb Atlas***
+- For the Database we have used ***Mongodb Atlas*** We did used Mongodb Atlas Database cloud service effectively.
+
+- ***Moongose*** for the backend
 
 - for the frontend we used ***ReactJS***
 
