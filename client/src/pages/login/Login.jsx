@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import styles from './Login.module.css';
+const myStorage = window.localStorage;
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -12,6 +13,7 @@ function Login() {
     e.preventDefault();
     if (username === 'admin' && password === 'password') {
       alert('Login successful!');
+      myStorage.setItem("user", "admin");
     } else {
       setShowError(true);
     }
