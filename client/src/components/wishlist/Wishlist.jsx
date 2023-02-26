@@ -23,7 +23,7 @@ const Wishlist = ({ onClose }) => {
       <div className="modal-content">
         <div className="modal-header">
           <h2 className="modal-title">Pinned Items</h2>
-          <button className="close-modal" onClick={onClose}>
+          <button className="wishlist-close-modal" onClick={onClose}>
             <FaTimes />
           </button>
         </div>

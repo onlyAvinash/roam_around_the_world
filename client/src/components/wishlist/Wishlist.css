@@ -34,8 +34,9 @@
     margin: 0;
 }
 
-.close-modal {
+.wishlist-close-modal {
     background-color: transparent;
+    color: black;
     border: none;
     font-size: 20px;
     cursor: pointer;
@@ -44,8 +45,9 @@
     right: 10px;
 }
 
-.close-modal:hover {
+.wishlist-close-modal:hover {
     opacity: 0.8;
+    background-color: transparent;
 }
 
 @keyframes modal-fade-in {
