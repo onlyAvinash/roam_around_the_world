@@ -49,7 +49,7 @@ const Header = () => {
             <p>Hey username!</p>
             <div className="profile-buttons">
             <button className='profile-share-btn' type='button'>Share your Visit </button>
-              <button className='profile-logout-btn' type='button'>LogOut </button>
+            <Link to="/login" style={{width:"80%"}}>  <button className='profile-logout-btn' type='button'>LogIn</button></Link>
               </div>
           </div>
         </div>
